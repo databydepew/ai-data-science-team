@@ -58,4 +58,6 @@ def log_ai_function(response: str, file_name: str, log: bool = True, log_path: s
         return (file_path, file_name)
     
     else:
-        return None
+        # Maintain a consistent return type even when logging is disabled
+        # so callers expecting a tuple of (path, file_name) do not fail
+        return (None, None)
